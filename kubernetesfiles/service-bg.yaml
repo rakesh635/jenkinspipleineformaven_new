@@ -14,6 +14,6 @@ spec:
     targetPort: 8080
   selector:
     workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
-    version: {{BUILDNUMBER}}
+    workload.user.cattle.io/version: {{BUILDNUMBER}}
   sessionAffinity: None
   type: LoadBalancer
