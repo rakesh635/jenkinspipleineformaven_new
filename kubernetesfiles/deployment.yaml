@@ -15,7 +15,6 @@ spec:
   selector:
     matchLabels:
       workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
-      depstrategy: rollingupdate
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -25,7 +24,6 @@ spec:
     metadata:
       labels:
         workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
-        depstrategy: rollingupdate
     spec:
       containers:
       - image: rakesh635/testhelloworld:{{BUILDNUMBER}}
