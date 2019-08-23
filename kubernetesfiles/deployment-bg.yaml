@@ -6,6 +6,7 @@ metadata:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
     version: v{{BUILDNUMBER}}
+    depstrategy: bluegreen
   name: {{APPNAME}}{{NAMEPREFIX}}
 spec:
   progressDeadlineSeconds: 90
@@ -15,11 +16,13 @@ spec:
     matchLabels:
       workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
       version: v{{BUILDNUMBER}}
+      depstrategy: bluegreen
   template:
     metadata:
       labels:
         workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
         version: v{{BUILDNUMBER}}
+        depstrategy: bluegreen
     spec:
       containers:
       - image: rakesh635/testhelloworld:{{BUILDNUMBER}}
