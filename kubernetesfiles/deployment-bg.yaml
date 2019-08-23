@@ -5,7 +5,7 @@ metadata:
   labels:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
-    version: "{{BUILDNUMBER}}"
+    version: v{{BUILDNUMBER}}
   name: {{APPNAME}}{{NAMEPREFIX}}
 spec:
   progressDeadlineSeconds: 90
@@ -14,10 +14,12 @@ spec:
   selector:
     matchLabels:
       workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
+      version: v{{BUILDNUMBER}}
   template:
     metadata:
       labels:
         workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
+        version: v{{BUILDNUMBER}}
     spec:
       containers:
       - image: rakesh635/testhelloworld:{{BUILDNUMBER}}
