@@ -22,7 +22,6 @@ spec:
     metadata:
       labels:
         workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
-        version: v{{BUILDNUMBER}}
         depstrategy: canary
     spec:
       containers:
