@@ -5,8 +5,6 @@ metadata:
   labels:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselectorcanary: deployment-qadeploy-{{APPNAME}}
-    version: v{{BUILDNUMBER}}
-    depstrategy: canary
   name: {{APPNAME}}{{NAMEPREFIX}}
 spec:
   progressDeadlineSeconds: 90
@@ -15,8 +13,6 @@ spec:
   selector:
     matchLabels:
       workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
-      version: v{{BUILDNUMBER}}
-      depstrategy: canary
   strategy:
     rollingUpdate:
       maxSurge: 1
