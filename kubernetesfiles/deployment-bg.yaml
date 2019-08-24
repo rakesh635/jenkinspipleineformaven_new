@@ -18,7 +18,6 @@ spec:
       labels:
         workload.user.cattle.io/workloadselector: deployment-qadeploy-{{APPNAME}}
         version: v{{BUILDNUMBER}}
-        depstrategy: bluegreen
     spec:
       containers:
       - image: rakesh635/testhelloworld:{{BUILDNUMBER}}
